@@ -13,22 +13,26 @@ class TextViewControl: UITableViewController {
     let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     var titlesArray = [Text]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(FileManager.default.urls(for: .documentDirectory, in: .userDomainMask))
+        tableView.delegate = self
+        loadItems()
     }
 
     // MARK: - Table view data source
 
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        print(titlesArray.count)
         return titlesArray.count
     }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "titleCell", for: indexPath)
         cell.textLabel?.text = titlesArray[indexPath.row].title
         
-
         return cell
     }
     
@@ -51,7 +55,9 @@ class TextViewControl: UITableViewController {
         }
         alert.addTextField { (alertTextField) in
             alertTextField.placeholder = "Enter Title or Name"
-            textField = alertTextField
+            if alertTextField.text != nil {
+                textField = alertTextField
+            }
         }
         alert.addAction(action)
         
@@ -65,7 +71,6 @@ class TextViewControl: UITableViewController {
         let destinationVC = segue.destination as! ViewController
         if let indexPath = tableView.indexPathForSelectedRow {
             destinationVC.titles = titlesArray[indexPath.row].title
-            destinationVC.text = titlesArray[indexPath.row].text
         }
     }
  

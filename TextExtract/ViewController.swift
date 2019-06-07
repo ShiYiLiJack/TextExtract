@@ -7,18 +7,20 @@
 //
 
 import UIKit
+import CoreData
 import FirebaseMLVision
 
-class ViewController: UIViewController, UIImagePickerControllerDelegate {
+class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
     var titles: String?
     var text: String?
     
-    let cameraImage = UIImagePickerController()
+    @IBOutlet weak var textView: UITextView!
     let imagePicked = UIImagePickerController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        imagePicked.delegate = self
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
@@ -27,14 +29,27 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate {
             fatalError("")
         }
         
-        
+        let vision = Vision.vision()
+        let textRecognizer = vision.onDeviceTextRecognizer()
+
+        let image = VisionImage(image: userPickedImage)
+
+        textRecognizer.process(image) { (result, error) in
+            guard error == nil, let result = result else {
+                return
+            }
+            self.textView.text = result.text
+
+        }
     }
     
     @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
-        present(cameraImage, animated: true, completion: nil)
+        imagePicked.sourceType = .camera
+        present(imagePicked, animated: true, completion: nil)
     }
     
     @IBAction func fileButtonPressed(_ sender: UIBarButtonItem) {
+        imagePicked.sourceType = .photoLibrary
         present(imagePicked, animated: true, completion: nil)
     }
 }
