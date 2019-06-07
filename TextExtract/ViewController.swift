@@ -8,13 +8,19 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
+class ViewController: UIViewController, UIImagePickerControllerDelegate {
+    var titles: String?
+    var text: String?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func cameraButtonPressed(_ sender: UIBarButtonItem) {
+    }
+    
+    @IBAction func fileButtonPressed(_ sender: UIBarButtonItem) {
+    }
 }
 

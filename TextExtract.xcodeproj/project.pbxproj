@@ -14,6 +14,7 @@
 		0401E19722A71237008873C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0401E19622A71237008873C3 /* Assets.xcassets */; };
 		0401E19A22A71237008873C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0401E19822A71237008873C3 /* LaunchScreen.storyboard */; };
 		0401E1A222A712BA008873C3 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 0401E1A122A712BA008873C3 /* GoogleService-Info.plist */; };
+		0401E1A622A9CE31008873C3 /* TextViewControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0401E1A522A9CE31008873C3 /* TextViewControl.swift */; };
 		06AEBBB156D4999F872053A4 /* Pods_TextExtract.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3192C800513FDBC96C7D6F95 /* Pods_TextExtract.framework */; };
 /* End PBXBuildFile section */
 
@@ -27,6 +28,7 @@
 		0401E19922A71237008873C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0401E19B22A71237008873C3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0401E1A122A712BA008873C3 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		0401E1A522A9CE31008873C3 /* TextViewControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewControl.swift; sourceTree = "<group>"; };
 		3192C800513FDBC96C7D6F95 /* Pods_TextExtract.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TextExtract.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		86CBE738955FE1ABD714E1AE /* Pods-TextExtract.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextExtract.debug.xcconfig"; path = "Target Support Files/Pods-TextExtract/Pods-TextExtract.debug.xcconfig"; sourceTree = "<group>"; };
 		CBB71F7E8D6214D368AFC0DD /* Pods-TextExtract.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TextExtract.release.xcconfig"; path = "Target Support Files/Pods-TextExtract/Pods-TextExtract.release.xcconfig"; sourceTree = "<group>"; };
@@ -68,6 +70,7 @@
 				0401E18C22A71234008873C3 /* AppDelegate.swift */,
 				0401E18E22A71234008873C3 /* ViewController.swift */,
 				0401E19022A71234008873C3 /* Main.storyboard */,
+				0401E1A522A9CE31008873C3 /* TextViewControl.swift */,
 				0401E19622A71237008873C3 /* Assets.xcassets */,
 				0401E19822A71237008873C3 /* LaunchScreen.storyboard */,
 				0401E19B22A71237008873C3 /* Info.plist */,
@@ -91,7 +94,6 @@
 				86CBE738955FE1ABD714E1AE /* Pods-TextExtract.debug.xcconfig */,
 				CBB71F7E8D6214D368AFC0DD /* Pods-TextExtract.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -219,6 +221,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0401E18F22A71234008873C3 /* ViewController.swift in Sources */,
+				0401E1A622A9CE31008873C3 /* TextViewControl.swift in Sources */,
 				0401E19522A71234008873C3 /* TextExtract.xcdatamodeld in Sources */,
 				0401E18D22A71234008873C3 /* AppDelegate.swift in Sources */,
 			);
